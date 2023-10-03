@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: nephtys <nephtys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:05:25 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/09/25 10:05:10 by lcamerly         ###   ########.fr       */
+/*   Updated: 2023/10/03 21:13:55 by nephtys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,7 +166,6 @@ int	main(void)
 	int count2 = 0;
 #include <stdio.h>
 
-	//Test line by line every possibilities and print the count of char
 	count = ft_printf("Test 1 : %c\n", 'a');
 	count2 = printf("Test 1 : %c\n", 'a');
 	printf("count ft_printf : %d\n count printf : %d\n", count, count2);

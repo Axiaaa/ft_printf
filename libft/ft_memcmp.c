@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 09:09:26 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/09/18 11:07:44 by lcamerly         ###   ########.fr       */
+/*   Created: 2023/09/13 11:32:11 by lcamerly          #+#    #+#             */
+/*   Updated: 2023/09/14 10:59:17 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include "/home/Nephtys/libft/libft.h"
-# include <stdarg.h>
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	size_t			i;
+	unsigned char	*ptr_s1;
+	unsigned char	*ptr_s2;
 
-int	ft_print_digits(int arg);
-int	ft_print_str(char *arg);
-int	ft_print_char(int arg);
-int	ft_print_hexa_digits_lower(int arg);
-int	ft_print_hexa_digits_upper(int arg);
-int	ft_print_pointer(int arg);
-int	ft_print_int(int arg);
-int	ft_print_unsigned(int arg);
-int	ft_printf(const char *format, ...);
-
-#endif
+	ptr_s1 = (unsigned char *)s1;
+	ptr_s2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		if (*ptr_s1 != *ptr_s2)
+		{
+			return (*ptr_s1 - *ptr_s2);
+		}
+		i++;
+		ptr_s1++;
+		ptr_s2++;
+	}
+	return (0);
+}

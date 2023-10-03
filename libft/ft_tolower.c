@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 13:55:34 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/09/18 11:23:08 by lcamerly         ###   ########.fr       */
+/*   Created: 2023/09/11 13:56:35 by lcamerly          #+#    #+#             */
+/*   Updated: 2023/09/14 16:30:09 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	unsigned int	nb;
-	int				temp;
+#include "libft.h"
 
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		nb = -n;
-	}
-	else
-		nb = n;
-	if (nb > 9)
-		ft_putnbr_fd(nb / 10, fd);
-	temp = nb % 10 + '0';
-	write(fd, &temp, 1);
+int	ft_tolower(int c)
+{
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }
