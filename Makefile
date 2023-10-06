@@ -3,7 +3,7 @@ LIBFT = ./libft/libft.a
 CC = cc
 SRC = ./objs/ft_printf.c ./objs/print_functions.c ./objs/print_ptr.c
 OBJ = $(SRC:.c=.o)
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra 
 DIR = ./objs
 HEADER = ft_printf.h
 
@@ -16,13 +16,13 @@ $(NAME): $(LIBFT) $(OBJ)
 $(DIR)/%.o: %.c | $(DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
+$(LIBFT):
+	make -C ./libft/
+
 $(DIR):
 	mkdir -p $(DIR)
 
 $(OBJ): $(HEADER)
-
-$(LIBFT):
-	make -C ./libft/
 
 clean:
 	rm -rf $(DIR)

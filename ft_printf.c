@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:05:25 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/10/05 10:56:20 by lcamerly         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:49:03 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,24 @@
 int	ft_print_char(int arg)
 {
 	return (write(1, &arg, 1));
+}
+
+void	ft_putnbr(int n)
+{
+	unsigned int	nb;
+	int				temp;
+
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		nb = -n;
+	}
+	else
+		nb = n;
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	temp = nb % 10 + '0';
+	write(1, &temp, 1);
 }
 
 int	ft_print_str(char *arg)
