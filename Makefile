@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-LIBFT = libft/libft.a
+LIBFT = ./libft/libft.a
 CC = cc
 SRC = ./objs/ft_printf.c ./objs/print_functions.c ./objs/print_ptr.c
 OBJ = $(SRC:.c=.o)
@@ -22,9 +22,7 @@ $(DIR):
 $(OBJ): $(HEADER)
 
 $(LIBFT):
-		cd ./libft/
-		make
-		cd ..
+	make -C ./libft/
 
 clean:
 	rm -rf $(DIR)
@@ -33,6 +31,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	make -C ./libft/ fclean
 	@echo "\033[33m$(NAME) deleted !\033[0m"
 
 re: fclean all

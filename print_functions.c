@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 09:57:38 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/10/05 10:52:08 by lcamerly         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:19:06 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ int	ft_print_hexa_digits_upper(int arg)
 	return (count);
 }
 
+int	ft_print_digits(int arg)
+{
+	ft_putnbr_fd(arg, 1);
+	return (sizeof(arg) / sizeof(int));
+}
+
 int	ft_print_int(int arg)
 {
 	int	count;
@@ -60,12 +66,6 @@ int	ft_print_uint(unsigned int arg)
 	count = 0;
 	count += ft_print_digits(arg);
 	return (count);
-}
-
-int	ft_print_digits(int arg)
-{
-	ft_putnbr_fd(arg, 1);
-	return (sizeof(arg) / sizeof(int));
 }
 
 int	ft_print_hexa_digits_lower(int arg)
