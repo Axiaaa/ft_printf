@@ -19,7 +19,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) 
 	ar rcs $(NAME) $(OBJ)
-	@echo "\033[32m$(NAME) created !\033[0m"
+	@echo "\033[34m[LIBFT]\033[0m \033[32m$(NAME) created !\033[0m"
 
 $(DIR)/%.o: %.c | $(DIR)
 	$(CC) $(FLAGS) -c $< -o $@
@@ -33,18 +33,18 @@ $(OBJ): $(HEADER)
 bonus : $(OBJ_BONUS)
 
 	ar rcs $(NAME) $(OBJ_BONUS)
-	@echo "\033[32mBonuses add to $(NAME)!\033[0m"
+	@echo "\033[34m[LIBFT]\033[0m \033[32mBonuses add to $(NAME)!\033[0m"
 
 
 
 clean:
 	rm -rf $(DIR)
 	rm -f $(OBJ_BONUS)
-	@echo "\033[31mObjects deleted !\033[0m" 
+	@echo "\033[34m[LIBFT]\033[0m \033[31mObjects deleted !\033[0m" 
 
 fclean: clean
 	rm -f $(NAME)
-	@echo "\033[33m$(NAME) deleted !\033[0m"
+	@echo "\033[34m[LIBFT]\033[0m \033[31m$(NAME) deleted !\033[0m"
 
 re: fclean all
 
