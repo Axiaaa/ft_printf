@@ -38,6 +38,7 @@ $(LIBFT): $(HEADER_LIBFT)
 clean:
 	rm -rf $(DIR)
 	@echo "\033[33m[FT_PRINTF]\033[0m \033[31mObjects deleted !\033[0m"
+	make -C ./libft/ clean
 
 fclean: clean
 	rm -f $(NAME)
