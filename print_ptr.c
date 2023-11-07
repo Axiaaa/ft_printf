@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:49:18 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/10/06 13:44:31 by lcamerly         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:35:46 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	ft_print_ptr(void *ptr)
 	}
 	ft_print_str("0x");
 	count = ft_print_hex_adress(num, hex_base);
-	return (count + 1);
+	return (count + 2);
 }

@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:05:25 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/10/06 13:49:03 by lcamerly         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:35:04 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,28 @@ int	ft_print_char(int arg)
 	return (write(1, &arg, 1));
 }
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
 	unsigned int	nb;
 	int				temp;
+	int				res;
 
+	res = 0;
 	if (n < 0)
 	{
 		write(1, "-", 1);
+		res++;
 		nb = -n;
 	}
 	else
 		nb = n;
 	if (nb > 9)
-		ft_putnbr(nb / 10);
+	{
+		res += ft_putnbr(nb / 10);
+	}
 	temp = nb % 10 + '0';
-	write(1, &temp, 1);
+	res += write(1, &temp, 1);
+	return (res);
 }
 
 int	ft_print_str(char *arg)
@@ -45,21 +51,21 @@ int	ft_print_str(char *arg)
 		count += ft_print_char((int)*arg);
 		arg++;
 	}
-	return (--count);
+	return (count);
 }
 
 int	ft_args_process(char c, va_list args)
 {
 	if (c == 'c')
-		ft_print_char(va_arg(args, int));
+		return (ft_print_char(va_arg(args, int)));
 	else if (c == 'd')
 		return (ft_print_digits(va_arg(args, int)));
 	else if (c == 's')
 		return (ft_print_str(va_arg(args, char *)));
 	else if (c == 'x')
-		return (ft_print_hexa_digits_lower(va_arg(args, int)) - 1);
+		return (ft_print_hexa_digits_lower(va_arg(args, int)));
 	else if (c == 'X')
-		return (ft_print_hexa_digits_upper(va_arg(args, int)) - 1);
+		return (ft_print_hexa_digits_upper(va_arg(args, int)));
 	else if (c == 'p')
 		return (ft_print_ptr(va_arg(args, void *)));
 	else if (c == 'i')
@@ -67,7 +73,7 @@ int	ft_args_process(char c, va_list args)
 	else if (c == 'u')
 		return (ft_print_uint(va_arg(args, int)));
 	else if (c == '%')
-		write(1, "%", 1);
+		return (write(1, "%", 1));
 	return (0);
 }
 
@@ -88,7 +94,6 @@ int	ft_printf(const char *format, ...)
 			count += write(1, format, 1);
 		format++;
 	}
-	count++;
 	va_end(args);
 	return (count);
 }
