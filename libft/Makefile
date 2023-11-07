@@ -30,7 +30,6 @@ $(OBJ): $(HEADER)
 
 clean:
 	rm -rf $(DIR)
-	rm -f $(OBJ_BONUS)
 	@echo "\033[34m[LIBFT]\033[0m \033[31mObjects deleted !\033[0m" 
 
 fclean: clean
