@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:49:18 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/11/07 16:35:46 by lcamerly         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:16:51 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_print_ptr(void *ptr)
 	if (num == 0)
 	{
 		ft_print_str("(nil)");
-		return (4);
+		return (5);
 	}
 	ft_print_str("0x");
 	count = ft_print_hex_adress(num, hex_base);
