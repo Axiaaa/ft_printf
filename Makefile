@@ -8,9 +8,9 @@ SRC_LIBFT = ./libft/ft_atoi.c ./libft/ft_bzero.c ./libft/ft_isalnum.c ./libft/ft
 		./libft/ft_putstr_fd.c ./libft/ft_strdup.c ./libft/ft_strjoin.c ./libft/ft_strlcat.c ./libft/ft_strlcpy.c ./libft/ft_strlen.c \
 		./libft/ft_strmapi.c ./libft/ft_strncmp.c ./libft/ft_strnstr.c ./libft/ft_strrchr.c ./libft/ft_strtrim.c ./libft/ft_substr.c \
 		./libft/ft_tolower.c ./libft/ft_toupper.c ./libft/ft_calloc.c ./libft/ft_memchr.c ./libft/ft_memcmp.c \
-		./libft/ft_memcpy.c ./libft/ft_memmove.c ./libft/ft_split.c
-SRC_LIBFT_BONUS = ./libft/bonus/ft_lstadd_back.c ./libft/bonus/ft_lstadd_front.c ./libft/bonus/ft_lstclear.c ./libft/bonus/ft_lstdelone.c \
-			./libft/bonus/ft_lstiter.c ./libft/bonus/ft_lstlast.c ./libft/bonus/ft_lstmap.c ./libft/bonus/ft_lstnew.c ./libft/bonus/ft_lstsize.c
+		./libft/ft_memcpy.c ./libft/ft_memmove.c ./libft/ft_split.c \
+		./libft/ft_lstadd_back.c ./libft/ft_lstadd_front.c ./libft/ft_lstclear.c ./libft/ft_lstdelone.c \
+		./libft/ft_lstiter.c ./libft/ft_lstlast.c ./libft/ft_lstmap.c ./libft/ft_lstnew.c ./libft/ft_lstsize.c
 OBJ_PRINTF = $(SRC_PRINTF:.c=.o)
 FLAGS = -Wall -Wextra
 DIR = ./objs
@@ -26,7 +26,7 @@ $(NAME): $(LIBFT) $(OBJ_PRINTF)
 $(DIR)/%.o: %.c | $(DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
-$(LIBFT): $(SRC_LIBFT) $(SRC_LIBFT_BONUS)
+$(LIBFT): $(SRC_LIBFT)
 	make -C ./libft/
 
 $(DIR):

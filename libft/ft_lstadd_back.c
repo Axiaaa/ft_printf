@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nephtys <nephtys@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 13:58:47 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/10/03 20:55:45 by nephtys          ###   ########.fr       */
+/*   Updated: 2023/11/07 13:02:35 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "./libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
