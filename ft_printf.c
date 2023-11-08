@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:05:25 by lcamerly          #+#    #+#             */
-/*   Updated: 2023/11/07 21:19:17 by lcamerly         ###   ########.fr       */
+/*   Updated: 2023/11/08 08:37:10 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_print_str(char *arg)
 
 	count = 0;
 	if (!(arg))
-			return ((write(1, "(null)", 6)));
+		return ((write(1, "(null)", 6)));
 	while (*arg)
 	{
 		count += ft_print_char((int)*arg);
